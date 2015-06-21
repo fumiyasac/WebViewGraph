@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<title>支出Best3</title>
+<style>
+canvas {
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden;
+overflow:hidden;
+}
+</style>
+</head>
+<body>
+<script src="./Chart.js"></script>
+<script>
+function drawBarChart(expense,sum){
+    barChartData = {
+        labels : [expense[0],expense[1],expense[2]],
+        datasets : [
+            {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data :[sum[0],sum[1],sum[2]]
+            }
+        ]
+    }
+    
+    //アニメーション処理を記述
+    ctx = document.getElementById("mycanvas").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(barChartData,{responsive : true});
+}
+</script>
+<canvas id="mycanvas" style="min-width:310px; height:500px; margin:0 auto; color:#ffffff;"></canvas>
+<!--
+ /**
+ * ■ canvasタグのサイジング
+ *
+ * iPhone4s         : 190px - 20px
+ * iPhone5,iPhone5s : 201px - 20px
+ * iPhone6          : 252px - 20px
+ * iPhone6 plus     : 331px - 20px
+ *
+ */
+ -->
+</body>
+</html>

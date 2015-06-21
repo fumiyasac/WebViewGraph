@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title>全科目の割合</title>
+<script src="./Chart.js"></script>
+<style>
+canvas{
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden;
+overflow:hidden;
+}
+</style>
+</head>
+<body>
+    <script>
+        function drawPieChart(graphData){
+            
+            //PieChartの表示
+            var ctx = document.getElementById("mycanvas").getContext("2d");
+            window.myPie = new Chart(ctx).Pie(graphData,{responsive:true});
+        }
+    </script>
+<div id="canvas-holder" style="min-width:310px; margin:0 auto;">
+<canvas id="mycanvas" style="min-width:310px; margin:0 auto; color:#ffffff;" />
+</div>
+<!--
+ /**
+ * ■ canvasタグのサイジング
+ *
+ * iPhone4s         : 190px - 20px
+ * iPhone5,iPhone5s : 201px - 20px
+ * iPhone6          : 252px - 20px
+ * iPhone6 plus     : 331px - 20px
+ *
+ */
+ -->
+</body>
+</html>
